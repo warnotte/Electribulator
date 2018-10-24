@@ -1,5 +1,5 @@
 
-package orw.warnotte.elecribulator.GUI;
+package org.warnotte.elecribulator.GUI;
 
 import java.awt.Dimension;
 import java.awt.Rectangle;
@@ -19,10 +19,9 @@ import javax.swing.JToggleButton;
 import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
 import org.warnotte.OBJ2GUI.Events.MyEventListener;
 import org.warnotte.Swing.Component.WaxSlider.WRoundSlider;
-
-import orw.warnotte.elecribulator.Definitions.DrumTypeList;
-import orw.warnotte.elecribulator.PresetManager.ControlValue;
-import orw.warnotte.elecribulator.PresetManager.PresetManager_Drum;
+import org.warnotte.elecribulator.Definitions.DrumTypeList;
+import org.warnotte.elecribulator.PresetManager.ControlValue;
+import org.warnotte.elecribulator.PresetManager.PresetManager_Drum;
 
 public class EMXPanel_DRUM extends EMXPanelBase implements MyEventListener {
 

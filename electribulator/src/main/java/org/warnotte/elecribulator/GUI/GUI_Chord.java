@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.GUI;
+package org.warnotte.elecribulator.GUI;
 
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -8,7 +8,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import orw.warnotte.elecribulator.Multi.evt;
+import org.warnotte.elecribulator.Multi.evt;
 
 public class GUI_Chord extends JPanel {
 

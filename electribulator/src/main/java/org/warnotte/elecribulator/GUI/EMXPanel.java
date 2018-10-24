@@ -1,5 +1,5 @@
 
-package orw.warnotte.elecribulator.GUI;
+package org.warnotte.elecribulator.GUI;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -20,11 +20,10 @@ import javax.swing.JToggleButton;
 import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
 import org.warnotte.OBJ2GUI.Events.MyEventListener;
 import org.warnotte.Swing.Component.WaxSlider.WRoundSlider;
-
-import orw.warnotte.elecribulator.Definitions.FXTypeList;
-import orw.warnotte.elecribulator.Definitions.OscillatorTypeList;
-import orw.warnotte.elecribulator.PresetManager.ControlValue;
-import orw.warnotte.elecribulator.PresetManager.PresetManager_Synth;
+import org.warnotte.elecribulator.Definitions.FXTypeList;
+import org.warnotte.elecribulator.Definitions.OscillatorTypeList;
+import org.warnotte.elecribulator.PresetManager.ControlValue;
+import org.warnotte.elecribulator.PresetManager.PresetManager_Synth;
 
 public class EMXPanel extends EMXPanelBase implements MyEventListener {
 

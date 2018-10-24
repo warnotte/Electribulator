@@ -1,10 +1,10 @@
-package orw.warnotte.elecribulator.GUI.TableModel;
+package org.warnotte.elecribulator.GUI.TableModel;
 
 import javax.swing.table.AbstractTableModel;
 
-import orw.warnotte.elecribulator.Multi.Thread_Arpegiateur;
-import orw.warnotte.elecribulator.PresetManager.ControlValue;
-import orw.warnotte.elecribulator.PresetManager.PresetManager_Synth;
+import org.warnotte.elecribulator.Multi.Thread_Arpegiateur;
+import org.warnotte.elecribulator.PresetManager.ControlValue;
+import org.warnotte.elecribulator.PresetManager.PresetManager_Synth;
 
 
 public class ArpMultiTableModel extends AbstractTableModel {

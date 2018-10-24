@@ -1,4 +1,4 @@
-package  orw.warnotte.elecribulator.GUI;
+package  org.warnotte.elecribulator.GUI;
 
 import java.awt.Color;
 import java.awt.Composite;

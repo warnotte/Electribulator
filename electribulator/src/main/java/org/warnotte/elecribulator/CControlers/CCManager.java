@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.CControlers;
+package org.warnotte.elecribulator.CControlers;
 import java.util.ArrayList;
 
 import javax.sound.midi.InvalidMidiDataException;
@@ -7,6 +7,9 @@ import javax.sound.midi.ShortMessage;
 
 import org.warnotte.OBJ2GUI.Annotations.GUI_CLASS;
 import org.warnotte.Utils.Curve.Copiable;
+import org.warnotte.elecribulator.Multi.evt;
+import org.warnotte.elecribulator.PresetManager.ControlValue;
+import org.warnotte.elecribulator.PresetManager.PresetManager_Synth;
 import org.warnotte.waxaudiomiditools.CControlers.Gateable;
 import org.warnotte.waxaudiomiditools.CControlers.KnowMidiList;
 import org.warnotte.waxaudiomiditools.CControlers.SignGenBase;
@@ -14,10 +17,6 @@ import org.warnotte.waxaudiomiditools.CControlers.SignGen_VCA;
 import org.warnotte.waxaudiomiditools.CControlers.SignGen_VCA_2ND;
 import org.warnotte.waxaudiomiditools.CControlers.SignGen_VCO;
 import org.warnotte.waxaudiomiditools.CControlers.Syncable;
-
-import orw.warnotte.elecribulator.Multi.evt;
-import orw.warnotte.elecribulator.PresetManager.ControlValue;
-import orw.warnotte.elecribulator.PresetManager.PresetManager_Synth;
 
 @GUI_CLASS(type=GUI_CLASS.Type.BoxLayout, BoxLayout_property=GUI_CLASS.Type_BoxLayout.Y)
 public class CCManager implements Syncable

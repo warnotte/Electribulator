@@ -1,9 +1,9 @@
-package orw.warnotte.elecribulator.GUI;
+package org.warnotte.elecribulator.GUI;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
-import orw.warnotte.elecribulator.Multi.evt;
+import org.warnotte.elecribulator.Multi.evt;
 
 import java.awt.GridLayout;
 

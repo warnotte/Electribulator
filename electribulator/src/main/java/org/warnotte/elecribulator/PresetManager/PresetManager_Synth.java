@@ -1,10 +1,9 @@
-package orw.warnotte.elecribulator.PresetManager;
+package org.warnotte.elecribulator.PresetManager;
 
 import javax.sound.midi.Receiver;
 
+import org.warnotte.elecribulator.Multi.evt;
 import org.warnotte.waxaudiomiditools.CControlers.KnowMidiList;
-
-import orw.warnotte.elecribulator.Multi.evt;
 
 public class PresetManager_Synth extends PresetManager  {
 	

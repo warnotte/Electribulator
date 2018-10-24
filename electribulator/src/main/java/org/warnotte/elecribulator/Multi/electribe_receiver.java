@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.Multi;
+package org.warnotte.elecribulator.Multi;
 
 import javax.sound.midi.MidiDevice;
 import javax.sound.midi.MidiMessage;
@@ -13,11 +13,10 @@ import javax.swing.event.EventListenerList;
 
 import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
 import org.warnotte.OBJ2GUI.Events.MyEventListener;
+import org.warnotte.elecribulator.PresetManager.ControlValue;
 import org.warnotte.waxaudiomiditools.MidiConfig.ConfigMIDIINPUT;
 import org.warnotte.waxaudiomiditools.MidiConfig.MidiCommon;
 import org.warnotte.waxaudiomiditools.MidiConfig.retourMidiConfig;
-
-import orw.warnotte.elecribulator.PresetManager.ControlValue;
 
 public class electribe_receiver implements Receiver
 {

@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.DTOs;
+package org.warnotte.elecribulator.DTOs;
 
 public class Projet {
 	

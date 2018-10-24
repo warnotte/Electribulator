@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.Multi;
+package org.warnotte.elecribulator.Multi;
 
 import java.io.File;
 import java.io.FileInputStream;

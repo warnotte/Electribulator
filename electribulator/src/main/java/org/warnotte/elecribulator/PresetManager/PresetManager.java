@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.PresetManager;
+package org.warnotte.elecribulator.PresetManager;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,15 +12,14 @@ import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.Receiver;
 import javax.sound.midi.ShortMessage;
 
+import org.warnotte.elecribulator.CControlers.CCManager;
+import org.warnotte.elecribulator.Multi.evt;
+import org.warnotte.elecribulator.Utils.Utils;
 import org.warnotte.waxaudiomiditools.CControlers.ControlElement;
 import org.warnotte.waxaudiomiditools.CControlers.KnowMidiList;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
-
-import orw.warnotte.elecribulator.CControlers.CCManager;
-import orw.warnotte.elecribulator.Multi.evt;
-import orw.warnotte.elecribulator.Utils.Utils;
 
 public class PresetManager {
 	

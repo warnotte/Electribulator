@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.GUI;
+package org.warnotte.elecribulator.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -40,14 +40,13 @@ import org.warnotte.OBJ2GUI.JWPanel;
 import org.warnotte.OBJ2GUI.ParseurAnnotations;
 import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
 import org.warnotte.OBJ2GUI.Events.MyEventListener;
+import org.warnotte.elecribulator.CControlers.CCManager;
+import org.warnotte.elecribulator.CControlers.Thread_Modulateurs;
+import org.warnotte.elecribulator.Multi.evt;
 import org.warnotte.waxaudiomiditools.CControlers.SignGenBase;
 import org.warnotte.waxaudiomiditools.CControlers.SignGen_VCA_2ND;
 import org.warnotte.waxaudiomiditools.CControlers.GUI.Panel_VCA2ND;
 import org.warnotte.waxlib2.Updater.Version;
-
-import orw.warnotte.elecribulator.CControlers.CCManager;
-import orw.warnotte.elecribulator.CControlers.Thread_Modulateurs;
-import orw.warnotte.elecribulator.Multi.evt;
 
 public class MainFrame extends JFrame implements WindowListener
 {

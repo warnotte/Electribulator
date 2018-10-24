@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.GUI;
+package org.warnotte.elecribulator.GUI;
 
 import java.awt.GridBagLayout;
 
@@ -6,13 +6,6 @@ import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiMessage;
 import javax.sound.midi.ShortMessage;
 import javax.swing.JPanel;
-
-import orw.warnotte.elecribulator.GUI.TableModel.ArpMultiTableModel;
-import orw.warnotte.elecribulator.GUI.TableModel.ArpNotesTableModel;
-import orw.warnotte.elecribulator.Multi.Thread_Arpegiateur;
-import orw.warnotte.elecribulator.Multi.evt;
-import orw.warnotte.elecribulator.Multi.Thread_Arpegiateur.Mode;
-
 import javax.swing.JSlider;
 import java.awt.GridBagConstraints;
 
@@ -28,6 +21,12 @@ import java.awt.Dimension;
 import javax.swing.BorderFactory;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.TableColumn;
+
+import org.warnotte.elecribulator.GUI.TableModel.ArpMultiTableModel;
+import org.warnotte.elecribulator.GUI.TableModel.ArpNotesTableModel;
+import org.warnotte.elecribulator.Multi.Thread_Arpegiateur;
+import org.warnotte.elecribulator.Multi.evt;
+import org.warnotte.elecribulator.Multi.Thread_Arpegiateur.Mode;
 
 import java.awt.Font;
 import java.awt.Color;

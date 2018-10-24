@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.Definitions;
+package org.warnotte.elecribulator.Definitions;
 
 import java.io.DataInputStream;
 import java.io.File;

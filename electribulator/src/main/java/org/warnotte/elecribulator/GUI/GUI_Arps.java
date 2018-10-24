@@ -1,14 +1,14 @@
-package orw.warnotte.elecribulator.GUI;
+package org.warnotte.elecribulator.GUI;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import orw.warnotte.elecribulator.Multi.Evt_Event;
-import orw.warnotte.elecribulator.Multi.Evt_Listener;
-import orw.warnotte.elecribulator.Multi.Thread_Arpegiateur;
-import orw.warnotte.elecribulator.Multi.evt;
-import orw.warnotte.elecribulator.Multi.evt.RecordMode;
+import org.warnotte.elecribulator.Multi.Evt_Event;
+import org.warnotte.elecribulator.Multi.Evt_Listener;
+import org.warnotte.elecribulator.Multi.Thread_Arpegiateur;
+import org.warnotte.elecribulator.Multi.evt;
+import org.warnotte.elecribulator.Multi.evt.RecordMode;
 
 import java.awt.GridBagLayout;
 import javax.swing.JComboBox;

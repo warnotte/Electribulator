@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.GUI;
+package org.warnotte.elecribulator.GUI;
 
 import java.awt.BorderLayout;
 
@@ -13,10 +13,9 @@ import javax.swing.JTabbedPane;
 
 import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
 import org.warnotte.OBJ2GUI.Events.MyEventListener;
-
-import orw.warnotte.elecribulator.PresetManager.PresetManager;
-import orw.warnotte.elecribulator.PresetManager.PresetManager_Drum;
-import orw.warnotte.elecribulator.PresetManager.PresetManager_Synth;
+import org.warnotte.elecribulator.PresetManager.PresetManager;
+import org.warnotte.elecribulator.PresetManager.PresetManager_Drum;
+import org.warnotte.elecribulator.PresetManager.PresetManager_Synth;
 
 public class GUI_PRESETMANAGER extends JPanel implements MyEventListener {
 	

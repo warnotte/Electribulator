@@ -1,4 +1,4 @@
-package orw.warnotte.elecribulator.GUI;
+package org.warnotte.elecribulator.GUI;
 
 import java.awt.Component;
 import java.awt.Graphics;
@@ -10,10 +10,9 @@ import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 
 import org.warnotte.Swing.Component.WaxSlider.WRoundSlider;
+import org.warnotte.elecribulator.PresetManager.ControlValue;
+import org.warnotte.elecribulator.PresetManager.PresetManager;
 import org.warnotte.waxaudiomiditools.CControlers.KnowMidiList;
-
-import orw.warnotte.elecribulator.PresetManager.ControlValue;
-import orw.warnotte.elecribulator.PresetManager.PresetManager;
 
 public class EMXPanelBase extends JPanel {
 

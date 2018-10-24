@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.warnotte</groupId>
+  <artifactId>electribulator</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  
+  
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>com.thoughtworks.xstream</groupId>
+  		<artifactId>xstream</artifactId>
+  		<version>1.4.10-java7</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.warnotte</groupId>
+  		<artifactId>waxlibswingcomponentsMVN</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.warnotte</groupId>
+  		<artifactId>waxLib2</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.warnotte</groupId>
+  		<artifactId>OBJ2GUI</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+</project>

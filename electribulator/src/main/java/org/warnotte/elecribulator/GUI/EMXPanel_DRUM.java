@@ -734,7 +734,7 @@ public class EMXPanel_DRUM extends EMXPanelBase implements MyEventListener {
 	 * @throws FileNotFoundException 
 	 */
 	private void initialize() throws FileNotFoundException {
-		loadBackGround(getClass().getResource("/images/Fond/EMXDrum_Wax.png"));
+		loadBackGround(getClass().getResource("/images/fond/EMXDrum_Wax.png"));
 		
 	//	icone = kit.getImage("images//EMX.png" );
 		

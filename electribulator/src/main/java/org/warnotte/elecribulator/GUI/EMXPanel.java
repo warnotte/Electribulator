@@ -1235,7 +1235,7 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 	 * @throws FileNotFoundException 
 	 */
 	private void initialize() throws FileNotFoundException {
-		loadBackGround(getClass().getResource("/images/Fond/EMX_Wax.png"));
+		loadBackGround(getClass().getResource("/images/fond/EMX_Wax.png"));
 		
 		//this.setSize(ic.getIconWidth(),ic.getIconHeight());
 		jLabel_LCD_LINE_1 = new JLabel();

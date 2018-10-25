@@ -320,7 +320,7 @@ public class GUI_Arp extends JPanel implements ActionListener {
 		if (jButton_ADD == null) {
 			jButton_ADD = new JButton();
 			jButton_ADD.setText("ADD");
-			jButton_ADD.setIcon(new ImageIcon(getClass().getResource("/icons/edit_add.png")));
+			jButton_ADD.setIcon(new ImageIcon(getClass().getResource("/images/icons/edit_add.png")));
 			jButton_ADD.setHorizontalAlignment(SwingConstants.LEFT);
 			jButton_ADD.setToolTipText("Add a step");
 			jButton_ADD.addActionListener(new java.awt.event.ActionListener() {
@@ -370,7 +370,7 @@ public class GUI_Arp extends JPanel implements ActionListener {
 		if (jButton_REMOVE == null) {
 			jButton_REMOVE = new JButton();
 			jButton_REMOVE.setText("REMOVE");
-			jButton_REMOVE.setIcon(new ImageIcon(getClass().getResource("/icons/edit_remove.png")));
+			jButton_REMOVE.setIcon(new ImageIcon(getClass().getResource("/images/icons/edit_remove.png")));
 			jButton_REMOVE.setHorizontalAlignment(SwingConstants.LEFT);
 			jButton_REMOVE.setToolTipText("Remove a step");
 			jButton_REMOVE.addActionListener(new java.awt.event.ActionListener() {
@@ -487,7 +487,7 @@ public class GUI_Arp extends JPanel implements ActionListener {
 			jButton_LEARN.setHorizontalAlignment(SwingConstants.LEFT);
 			jButton_LEARN.setMnemonic(KeyEvent.VK_UNDEFINED);
 			jButton_LEARN.setToolTipText("Begin midi learning to record the notes you type on your keyboard or midi source ...");
-			jButton_LEARN.setIcon(new ImageIcon(getClass().getResource("/icons/education.png")));
+			jButton_LEARN.setIcon(new ImageIcon(getClass().getResource("/images/icons/education.png")));
 			jButton_LEARN.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					startlearn();
@@ -535,7 +535,7 @@ public class GUI_Arp extends JPanel implements ActionListener {
 		{
 			jButton_LOAD = new JButton();
 			jButton_LOAD.setText("LOAD");
-			jButton_LOAD.setIcon(new ImageIcon(getClass().getResource("/icons/folder_open.png")));
+			jButton_LOAD.setIcon(new ImageIcon(getClass().getResource("/images/icons/folder_open.png")));
 			jButton_LOAD.addActionListener(new java.awt.event.ActionListener()
 			{
 				public void actionPerformed(java.awt.event.ActionEvent e)
@@ -558,7 +558,7 @@ public class GUI_Arp extends JPanel implements ActionListener {
 		{
 			jButton_SAVE = new JButton();
 			jButton_SAVE.setText("SAVE");
-			jButton_SAVE.setIcon(new ImageIcon(getClass().getResource("/icons/filesave.png")));
+			jButton_SAVE.setIcon(new ImageIcon(getClass().getResource("/images/icons/filesave.png")));
 			jButton_SAVE.addActionListener(new java.awt.event.ActionListener()
 			{
 				public void actionPerformed(java.awt.event.ActionEvent e)
@@ -716,7 +716,7 @@ public class GUI_Arp extends JPanel implements ActionListener {
 		if (jButton_ADD_ARPMULTI == null) {
 			jButton_ADD_ARPMULTI = new JButton();
 			jButton_ADD_ARPMULTI.setText("ADD");
-			jButton_ADD_ARPMULTI.setIcon(new ImageIcon(getClass().getResource("/icons/edit_add.png")));
+			jButton_ADD_ARPMULTI.setIcon(new ImageIcon(getClass().getResource("/images/icons/edit_add.png")));
 			jButton_ADD_ARPMULTI.setHorizontalAlignment(SwingConstants.LEFT);
 			jButton_ADD_ARPMULTI.setToolTipText("Add a step");
 			jButton_ADD_ARPMULTI.addActionListener(new java.awt.event.ActionListener() {
@@ -738,7 +738,7 @@ public class GUI_Arp extends JPanel implements ActionListener {
 		if (jButton_REMOVE_ARPMULTI == null) {
 			jButton_REMOVE_ARPMULTI = new JButton();
 			jButton_REMOVE_ARPMULTI.setText("REMOVE");
-			jButton_REMOVE_ARPMULTI.setIcon(new ImageIcon(getClass().getResource("/icons/edit_remove.png")));
+			jButton_REMOVE_ARPMULTI.setIcon(new ImageIcon(getClass().getResource("/images/icons/edit_remove.png")));
 			jButton_REMOVE_ARPMULTI.setHorizontalAlignment(SwingConstants.LEFT);
 			jButton_REMOVE_ARPMULTI.setToolTipText("Remove a step");
 			jButton_REMOVE_ARPMULTI.addActionListener(new java.awt.event.ActionListener() {

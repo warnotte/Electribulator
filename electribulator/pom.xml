@@ -1,45 +1,72 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.warnotte</groupId>
-  <artifactId>electribulator</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.warnotte</groupId>
+	<artifactId>electribulator</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>7</maven.compiler.source>	
+		<maven.compiler.source>7</maven.compiler.source>
 		<maven.compiler.target>7</maven.compiler.target>
+		<project.mainclass1>org.warnotte.elecribulator.GUI.MainFrame</project.mainclass1>
 	</properties>
-  
-  
-  <dependencies>
-  
-  
-  <dependency>
-  		  <groupId>org.warnotte</groupId>
-  <artifactId>waxaudiomiditools</artifactId>
-  
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.thoughtworks.xstream</groupId>
-  		<artifactId>xstream</artifactId>
-  		<version>1.4.10-java7</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.warnotte</groupId>
-  		<artifactId>waxlibswingcomponentsMVN</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.warnotte</groupId>
-  		<artifactId>waxLib2</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.warnotte</groupId>
-  		<artifactId>OBJ2GUI</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
-  </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>build-first</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<!--<finalName>${project.artifactId}</finalName> -->
+							<archive>
+								<manifest>
+									<mainClass>${project.mainclass1}</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+		</build>
+
+			<dependencies>
+				<dependency>
+					<groupId>org.warnotte</groupId>
+					<artifactId>waxaudiomiditools</artifactId>
+					<version>0.0.1-SNAPSHOT</version>
+				</dependency>
+				<dependency>
+					<groupId>com.thoughtworks.xstream</groupId>
+					<artifactId>xstream</artifactId>
+					<version>1.4.10</version>
+				</dependency>
+				<dependency>
+					<groupId>org.warnotte</groupId>
+					<artifactId>waxlibswingcomponentsMVN</artifactId>
+					<version>0.0.1-SNAPSHOT</version>
+				</dependency>
+				<dependency>
+					<groupId>org.warnotte</groupId>
+					<artifactId>waxLib2</artifactId>
+					<version>0.0.1-SNAPSHOT</version>
+				</dependency>
+				<dependency>
+					<groupId>org.warnotte</groupId>
+					<artifactId>OBJ2GUI</artifactId>
+					<version>0.0.1-SNAPSHOT</version>
+				</dependency>
+			</dependencies>
 </project>

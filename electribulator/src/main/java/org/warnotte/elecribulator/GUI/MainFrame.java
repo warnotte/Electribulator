@@ -12,6 +12,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -40,6 +42,7 @@ import org.warnotte.OBJ2GUI.JWPanel;
 import org.warnotte.OBJ2GUI.ParseurAnnotations;
 import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
 import org.warnotte.OBJ2GUI.Events.MyEventListener;
+import org.warnotte.SplashScreen.LoadSplash2;
 import org.warnotte.elecribulator.CControlers.CCManager;
 import org.warnotte.elecribulator.CControlers.Thread_Modulateurs;
 import org.warnotte.elecribulator.Multi.evt;
@@ -511,21 +514,29 @@ public class MainFrame extends JFrame implements WindowListener
 		return jMenu_Help;
 	}
 	
-	public File[] getBackGroundList()
+	public URL[] getBackGroundList()
 	{
-		File f = new File("images"+File.separator+"fond"+File.separator);
-		File [] fs = f.listFiles();
-		return fs;
+		//File f = new File("images"+File.separator+"fond"+File.separator);
+		URL [] urls = {
+				getClass().getResource("/images/fond/EMX_RED_FSK1138.png"),
+				getClass().getResource("/images/fond/EMXDrum_Wax.png"),
+				getClass().getResource("/images/fond/EMX_Donald_Baynes.png"),
+				getClass().getResource("/images/fond/EMX_Wax.png"),
+				
+		};
+		
+		return urls;
 	}
 	
 	private JMenu getJMenu_BackGround() {
 		if (jMenu_BackGround == null) {
 			jMenu_BackGround = new JMenu();
 			jMenu_BackGround.setText("BackGround");
-			File [] fs = getBackGroundList();
+			URL [] fs = getBackGroundList();
 			
-			for (int i = 0; i < fs.length; i++) {
-				String filename=fs[i].getName();
+
+			 for (int i = 0; i < fs.length; i++) {
+				String filename=fs[i].getFile().substring(fs[i].getFile().lastIndexOf("/")+1);
 				if (filename.contains("CVS")) continue;
 				jMenu_BackGround.add(getJMenuItem_Load_Modulators(filename));
 				
@@ -542,7 +553,7 @@ public class MainFrame extends JFrame implements WindowListener
 			jMenuItem_change_background.setText(filename);
 			jMenuItem_change_background.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					String pathtoimage = "images"+File.separator+"fond"+File.separator+""+filename;
+					URL pathtoimage = getClass().getResource("/images/fond/"+filename);
 					System.err.println("changed bck to "+pathtoimage);
 					Image img = new ImageIcon(pathtoimage).getImage();
 					EMXPanelBase.icone=img;
@@ -997,7 +1008,7 @@ public class MainFrame extends JFrame implements WindowListener
 		else throw new FileNotFoundException("I cannot find the directory "+dir+ " in order to load list of project...");
 	}
 	
-	public static LoadSplash ls;
+	public static LoadSplash2 ls;
 	private JMenu jMenu_View = null;
 	private JCheckBox jCheckBox_ApplyPresetOnLoad = null;  //  @jve:decl-index=0:visual-constraint="686,113"
 	private JMenuItem jMenuItem_Save_Drum_Presets = null;
@@ -1187,7 +1198,7 @@ public class MainFrame extends JFrame implements WindowListener
 				
 				
 				Version.set(0,2,4,"SplineInterpolation");
-				ls=new LoadSplash("images"+System.getProperty("file.separator")+"splash.jpg", true, false, Version.getVersionString(), "Warnotte Renaud");
+				ls=new LoadSplash2(getClass().getResource("/images/splash.jpg"), Version.getVersionString(), "Warnotte Renaud");
 				ls.setVisible(true);
 				
 				evt evt1= null;
@@ -1234,7 +1245,7 @@ public class MainFrame extends JFrame implements WindowListener
 		this.addWindowListener(this);
 		this.setTitle("Wax Electribulator "+Version.getVersionString());
 		this.setSize(1100, 950);
-		Image img = new ImageIcon("images"+File.separator+"fond"+File.separator+"EMX_Wax.png").getImage();
+		Image img = new ImageIcon(getClass().getResource("/images/fond/EMX_Wax.png")).getImage();
 		EMXPanel.icone=img;
 		
 

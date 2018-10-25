@@ -185,7 +185,7 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jSlider_GLIDE == null) {
 			final ControlValue cv = pm.getPresetByName("GLIDE");
 			jSlider_GLIDE = createSlider("GLIDE", cv.getValue()); 
-			jSlider_GLIDE.setToolTipText("Evite de toucher à ca a mon avis");
+			jSlider_GLIDE.setToolTipText("Evite de toucher ï¿½ ca a mon avis");
 			jSlider_GLIDE.setBounds(new Rectangle(226+201, 65, 56, 56));
 			jSlider_GLIDE.addChangeListener(new javax.swing.event.ChangeListener() {
 				public void stateChanged(javax.swing.event.ChangeEvent e) {
@@ -1235,7 +1235,7 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 	 * @throws FileNotFoundException 
 	 */
 	private void initialize() throws FileNotFoundException {
-		loadBackGround("images"+File.separator+"Fond"+File.separator+"EMX_Wax.png");
+		loadBackGround(getClass().getResource("/images/Fond/EMX_Wax.png"));
 		
 		//this.setSize(ic.getIconWidth(),ic.getIconHeight());
 		jLabel_LCD_LINE_1 = new JLabel();

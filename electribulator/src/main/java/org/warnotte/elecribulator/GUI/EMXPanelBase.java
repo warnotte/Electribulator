@@ -3,6 +3,7 @@ package org.warnotte.elecribulator.GUI;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
@@ -25,7 +26,7 @@ public class EMXPanelBase extends JPanel {
 	public static Image icone = null;  //  @jve:decl-index=0:
 	public static Image icone_drum = null;  //  @jve:decl-index=0:
 	
-	public void loadBackGround(String filename)
+	public void loadBackGround(URL filename)
 	{
 		if (drumpanel==false)
 		{

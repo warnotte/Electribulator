@@ -1,0 +1,232 @@
+<object-stream>
+  <list>
+  <PresetManager.ControlValue>
+      <ce>
+        <Label>WAVE</Label>
+        <CC>0</CC>
+        <NRPN>true</NRPN>
+        <MSB>8</MSB>
+        <LSB>1</LSB>
+        <OtherValue>6</OtherValue>
+      </ce>
+      <value>2.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>OSC TYPE</Label>
+        <CC>70</CC>
+      </ce>
+      <value>20.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>OSC EDIT 1</Label>
+        <CC>14</CC>
+      </ce>
+      <value>0.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>OSC EDIT 2</Label>
+        <CC>15</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>GLIDE</Label>
+        <CC>5</CC>
+      </ce>
+      <value>0.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FILTER TYPE</Label>
+        <CC>83</CC>
+      </ce>
+      <value>0.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FILTER CUTOFF</Label>
+        <CC>74</CC>
+      </ce>
+      <value>80.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FILTER RESONNANCE</Label>
+        <CC>71</CC>
+      </ce>
+      <value>40.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FILTER EG INT</Label>
+        <CC>79</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FILTER DRIVE</Label>
+        <CC>84</CC>
+      </ce>
+      <value>0.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>LEVEL</Label>
+        <CC>7</CC>
+      </ce>
+      <value>127.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>PAN</Label>
+        <CC>10</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>EG TIME</Label>
+        <CC>75</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>AMP EG</Label>
+        <CC>86</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>ROLL</Label>
+        <CC>85</CC>
+      </ce>
+      <value>0.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX SEND</Label>
+        <CC>91</CC>
+      </ce>
+      <value>127.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX SELECT</Label>
+        <CC>81</CC>
+      </ce>
+      <value>0.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>MOD TYPE</Label>
+        <CC>87</CC>
+      </ce>
+      <value>55.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>MOD DEPTH</Label>
+        <CC>90</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>MOD SPEED</Label>
+        <CC>89</CC>
+      </ce>
+      <value>48.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>MOD DEST</Label>
+        <CC>88</CC>
+      </ce>
+      <value>40.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>MOD BPM SYNC</Label>
+        <CC>82</CC>
+      </ce>
+      <value>0.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX 1 TYPE</Label>
+        <CC>12</CC>
+      </ce>
+      <value>30.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX 1 EDIT1</Label>
+        <CC>92</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX 1 EDIT2</Label>
+        <CC>93</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX 2 TYPE</Label>
+        <CC>13</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX 2 EDIT1</Label>
+        <CC>94</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX 2 EDIT2</Label>
+        <CC>95</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX 3 TYPE</Label>
+        <CC>24</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX 3 EDIT1</Label>
+        <CC>25</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX 3 EDIT2</Label>
+        <CC>26</CC>
+      </ce>
+      <value>63.0</value>
+    </PresetManager.ControlValue>
+    <PresetManager.ControlValue>
+      <ce>
+        <Label>FX CHAIN</Label>
+        <CC>23</CC>
+      </ce>
+      <value>0.0</value>
+    </PresetManager.ControlValue>
+  </list>
+</object-stream>

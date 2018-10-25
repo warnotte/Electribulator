@@ -1,0 +1,32 @@
+<ArpegiatorConfig>
+  <int-array>
+    <int>0</int>
+    <int>-2</int>
+    <int>0</int>
+    <int>-3</int>
+    <int>-9</int>
+    <int>-3</int>
+    <int>-11</int>
+    <int>-12</int>
+  </int-array>
+  <float-array>
+    <float>0.29</float>
+    <float>0.29</float>
+    <float>0.29</float>
+    <float>0.29</float>
+    <float>0.29</float>
+    <float>0.29</float>
+    <float>0.29</float>
+    <float>0.0</float>
+  </float-array>
+  <long-array>
+    <long>250</long>
+    <long>250</long>
+    <long>250</long>
+    <long>250</long>
+    <long>250</long>
+    <long>250</long>
+    <long>250</long>
+    <long>250</long>
+  </long-array>
+</ArpegiatorConfig>

@@ -12,9 +12,9 @@
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
 		<project.mainclass1>org.warnotte.elecribulator.GUI.MainFrame</project.mainclass1>
-		
+
 		<releasedir>release</releasedir>
-		
+
 	</properties>
 
 	<build>
@@ -58,7 +58,7 @@
 										<include name="**/*" />
 									</fileset>
 								</copy>
-								
+
 								<copy todir="${releasedir}/docs">
 									<fileset dir="docs">
 										<include name="**/*" />
@@ -70,14 +70,16 @@
 										<include name="**/*" />
 									</fileset>
 								</copy>
-								
+
 								<copy todir="${releasedir}/">
 									<fileset dir="rootFolder">
 										<include name="**/*" />
 									</fileset>
 								</copy>
 
-								 <copy file="${basedir}/target/electribulator-${project.version}-jar-with-dependencies.jar" tofile="${releasedir}/electribulator.jar" />
+								<copy
+									file="${basedir}/target/electribulator-${project.version}-jar-with-dependencies.jar"
+									tofile="${releasedir}/electribulator.jar" />
 
 							</target>
 						</configuration>
@@ -87,7 +89,57 @@
 					</execution>
 				</executions>
 			</plugin>
+			
+			
+			<!-- Pour faire un executable -->
+			<!-- 
+			<plugin>
+				<groupId>com.akathist.maven.plugins.launch4j</groupId>
+				<artifactId>launch4j-maven-plugin</artifactId>
+				<version>1.7.16</version>
+				<executions>
+					<execution>
+						<id>l4j-clui</id>
+						<phase>package</phase>
+						<goals>
+							<goal>launch4j</goal>
+						</goals>
+						<configuration>
+							<headerType>console</headerType>
+							<outfile>target/${project.artifactId}-${project.version}.exe</outfile>
+							<jar>target/${project.artifactId}-${project.version}-jar-with-dependencies.jar</jar>
+							<errTitle>encc</errTitle>
+							<classPath>
+								<mainClass>${project.mainclass1}</mainClass>
+								<addDependencies>true</addDependencies>
+								<preCp>anything</preCp>
+							</classPath>
+							<jre>
+								<minVersion>1.${maven.compiler.target}.0</minVersion>
+								<opts>
+									<opt>-Djava.endorsed.dirs=./endorsed</opt>
+								</opts>
+							</jre>
+							<versionInfo>
+								<fileVersion>1.0.0.0</fileVersion>
+								<txtFileVersion>1.0.0.0</txtFileVersion>
+								<fileDescription>${project.name}</fileDescription>
+								<copyright>Warnotte Renaud</copyright>
+								<productVersion>1.0.0.0</productVersion>
+								<txtProductVersion>1.0.0.0</txtProductVersion>
+								<productName>${project.name}</productName>
+								<originalFilename>${project.artifactId}-${project.version}.exe</originalFilename>
+								<internalName>${project.name}</internalName>
+							</versionInfo>
+							 
+						</configuration>
+					</execution>
 
+
+					
+				</executions>
+			</plugin>
+ 			-->
 
 		</plugins>
 	</build>

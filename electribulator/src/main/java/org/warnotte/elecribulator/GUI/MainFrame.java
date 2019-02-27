@@ -630,7 +630,7 @@ public class MainFrame extends JFrame implements WindowListener
 					boolean t = evt.checkForNewVersion();
 					if (t==false)
 					{
-						DialogDivers.Show_dialog("", "No new version aivailable");
+						DialogDivers.Show_dialog("No new version aivailable", "No new version aivailable");
 					}
 					else
 						evt.checkandGetForNewVersion();

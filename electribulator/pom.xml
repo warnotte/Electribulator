@@ -12,6 +12,9 @@
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
 		<project.mainclass1>org.warnotte.elecribulator.GUI.MainFrame</project.mainclass1>
+		
+		<releasedir>release</releasedir>
+		
 	</properties>
 
 	<build>
@@ -50,30 +53,31 @@
 						<configuration>
 							<target>
 
-								<copy todir="${basedir}/target/config">
+								<copy todir="${releasedir}/config">
 									<fileset dir="config">
 										<include name="**/*" />
 									</fileset>
 								</copy>
 								
-								<copy todir="${basedir}/target/docs">
+								<copy todir="${releasedir}/docs">
 									<fileset dir="docs">
 										<include name="**/*" />
 									</fileset>
 								</copy>
 
-								<copy todir="${basedir}/target/saves">
+								<copy todir="${releasedir}/saves">
 									<fileset dir="saves">
 										<include name="**/*" />
 									</fileset>
 								</copy>
 								
-								<copy todir="${basedir}/target/">
+								<copy todir="${releasedir}/">
 									<fileset dir="rootFolder">
 										<include name="**/*" />
 									</fileset>
 								</copy>
 
+								 <copy file="${basedir}/target/electribulator-${project.version}-jar-with-dependencies.jar" tofile="${releasedir}/electribulator.jar" />
 
 							</target>
 						</configuration>

@@ -1,12 +1,6 @@
 package org.warnotte.elecribulator.Definitions;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintStream;
 
 public class oi {
 
@@ -15,7 +9,7 @@ public class oi {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		File f = new File("DrumPCMList");
+	/*	File f = new File("DrumPCMList");
 		File f2 = new File("DrumPCMList.2");
 		FileInputStream fis = new FileInputStream(f);
 		FileOutputStream fos = new FileOutputStream(f2);
@@ -33,7 +27,7 @@ public class oi {
 		ps.close();
 		fos.flush();
 		fos.close();
-		 
+		 */
 		
 	}
 

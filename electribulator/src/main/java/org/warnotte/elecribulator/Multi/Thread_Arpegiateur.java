@@ -138,6 +138,7 @@ public class Thread_Arpegiateur extends Thread {
 		this.evt1 = evt1;
 	}
 
+	@Override
 	public void run() {
 		ShortMessage newmessage = new ShortMessage();
 
@@ -175,7 +176,7 @@ public class Thread_Arpegiateur extends Thread {
 			
 			
 			try {
-				// terminé=false;
+				// terminÃ©=false;
 				boolean firstloop = true;
 				
 				
@@ -199,7 +200,7 @@ public class Thread_Arpegiateur extends Thread {
 					for (i = str; i < NoteSeq.length; i++) {
 						int NOTE = NoteSeq[i] ;
 						float GATE = GateLen[i]* ARPGateDiv[multiarploop];
-						long SLEEP = (long) ((float)SleepLen[i]* ARPSleepDiv[multiarploop]);;
+						long SLEEP = (long) (SleepLen[i]* ARPSleepDiv[multiarploop]);;
 						
 						
 						synchronized (this) {
@@ -211,7 +212,7 @@ public class Thread_Arpegiateur extends Thread {
 							newmessage = new ShortMessage();
 							try {
 								newmessage = new ShortMessage();
-								((ShortMessage) newmessage).setMessage(ShortMessage.NOTE_OFF, 1, old_note, 0);
+								newmessage.setMessage(ShortMessage.NOTE_OFF, 1, old_note, 0);
 								// evt1.addMessageToStack(newmessage);
 								evt1.sendMessageToStack(newmessage);
 
@@ -223,7 +224,7 @@ public class Thread_Arpegiateur extends Thread {
 									firstloop = false;
 
 								newmessage = new ShortMessage();
-								((ShortMessage) newmessage).setMessage(ShortMessage.NOTE_ON, 1, NOTE + ORIG_NOTE, old_vel);
+								newmessage.setMessage(ShortMessage.NOTE_ON, 1, NOTE + ORIG_NOTE, old_vel);
 
 								// sendMessageToStack
 								evt1.sendMessageToStack(newmessage);
@@ -253,7 +254,7 @@ public class Thread_Arpegiateur extends Thread {
 					for (i = NoteSeq.length-2; i >0 ; i--) {
 						int NOTE = NoteSeq[i] ;
 						float GATE = GateLen[i]* ARPGateDiv[multiarploop];
-						long SLEEP = (long) ((float)SleepLen[i]* ARPSleepDiv[multiarploop]);;
+						long SLEEP = (long) (SleepLen[i]* ARPSleepDiv[multiarploop]);;
 						
 						synchronized (this) {
 							// System.err.println(this.getId() + " looping " +
@@ -262,7 +263,7 @@ public class Thread_Arpegiateur extends Thread {
 							newmessage = new ShortMessage();
 							try {
 								newmessage = new ShortMessage();
-								((ShortMessage) newmessage).setMessage(ShortMessage.NOTE_OFF, 1, old_note, 0);
+								newmessage.setMessage(ShortMessage.NOTE_OFF, 1, old_note, 0);
 								// evt1.addMessageToStack(newmessage);
 								evt1.sendMessageToStack(newmessage);
 
@@ -273,7 +274,7 @@ public class Thread_Arpegiateur extends Thread {
 									firstloop = false;
 
 								newmessage = new ShortMessage();
-								((ShortMessage) newmessage).setMessage(ShortMessage.NOTE_ON, 1, NOTE + ORIG_NOTE, old_vel);
+								newmessage.setMessage(ShortMessage.NOTE_ON, 1, NOTE + ORIG_NOTE, old_vel);
 
 								// sendMessageToStack
 								evt1.sendMessageToStack(newmessage);
@@ -332,7 +333,7 @@ public class Thread_Arpegiateur extends Thread {
 
 			
 			// Fin de la boucle d'ARPegiation
-			// Doit-on recommencer si le property_mode multi ARP est activé ?
+			// Doit-on recommencer si le property_mode multi ARP est activÃ© ?
 			
 			
 			
@@ -342,7 +343,7 @@ public class Thread_Arpegiateur extends Thread {
 				// System.err.println(this.getId()+"-C- Note OFF "+old_note);
 				try {
 					if (old_note != -1) {
-						((ShortMessage) newmessage).setMessage(ShortMessage.NOTE_OFF, 1, old_note, 0);
+						newmessage.setMessage(ShortMessage.NOTE_OFF, 1, old_note, 0);
 						// evt1.addMessageToStack(newmessage);
 						evt1.sendMessageToStack(newmessage);
 						
@@ -406,7 +407,7 @@ public class Thread_Arpegiateur extends Thread {
 		ShortMessage newmessage = new ShortMessage();
 		// System.err.println(this.getId()+"-D- Note OFF "+old_note);
 		try {
-			((ShortMessage) newmessage).setMessage(messageOrigine.NOTE_OFF, messageOrigine.getChannel(), old_note, messageOrigine.getData2());
+			newmessage.setMessage(messageOrigine.NOTE_OFF, messageOrigine.getChannel(), old_note, messageOrigine.getData2());
 			// evt1.addMessageToStack(newmessage);
 			evt1.sendMessageToStack(newmessage);
 		} catch (InvalidMidiDataException e) {

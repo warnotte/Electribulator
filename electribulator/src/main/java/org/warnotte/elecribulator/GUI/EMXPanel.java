@@ -6,7 +6,6 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
-import java.io.File;
 import java.io.FileNotFoundException;
 
 import javax.sound.midi.MidiMessage;
@@ -19,11 +18,11 @@ import javax.swing.JToggleButton;
 
 import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
 import org.warnotte.OBJ2GUI.Events.MyEventListener;
-import org.warnotte.Swing.Component.WaxSlider.WRoundSlider;
 import org.warnotte.elecribulator.Definitions.FXTypeList;
 import org.warnotte.elecribulator.Definitions.OscillatorTypeList;
 import org.warnotte.elecribulator.PresetManager.ControlValue;
 import org.warnotte.elecribulator.PresetManager.PresetManager_Synth;
+import org.warnotte.waxlibswingcomponents.Swing.Component.WaxSlider.WRoundSlider;
 
 public class EMXPanel extends EMXPanelBase implements MyEventListener {
 
@@ -310,10 +309,12 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			jSlider_FX_1_SELECT = createSlider("FX 1 TYPE", cv.getValue(), 0, 127, 360, 82);
 			jSlider_FX_1_SELECT.setBounds(new Rectangle(55, 57, 90, 90));
 			jSlider_FX_1_SELECT.addMouseListener(new java.awt.event.MouseAdapter() {
+				@Override
 				public void mouseEntered(java.awt.event.MouseEvent e) {
 					FX_SELECTED=1;
 					refresh_FX_TEXT(cv);
 				}
+				@Override
 				public void mouseExited(java.awt.event.MouseEvent e) {
 					FX_SELECTED=-1;
 					refresh_FX_TEXT(cv);
@@ -371,10 +372,12 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			jSlider_FX_2_SELECT = createSlider("FX 2 TYPE", cv.getValue(),0, 127, 360, 82); 
 			jSlider_FX_2_SELECT.setBounds(new Rectangle(55, 335, 90, 90));
 			jSlider_FX_2_SELECT.addMouseListener(new java.awt.event.MouseAdapter() {
+				@Override
 				public void mouseEntered(java.awt.event.MouseEvent e) {
 					FX_SELECTED=2;
 					refresh_FX_TEXT(cv);
 				}
+				@Override
 				public void mouseExited(java.awt.event.MouseEvent e) {
 					FX_SELECTED=-1;
 					refresh_FX_TEXT(cv);
@@ -433,10 +436,12 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			jSlider_FX_3_SELECT = createSlider("FX 3 TYPE", cv.getValue(),0, 127, 360, 82); 
 			jSlider_FX_3_SELECT.setBounds(new Rectangle(257, 246, 90, 90));
 			jSlider_FX_3_SELECT.addMouseListener(new java.awt.event.MouseAdapter() {
+				@Override
 				public void mouseEntered(java.awt.event.MouseEvent e) {
 					FX_SELECTED=3;
 					refresh_FX_TEXT(cv);
 				}
+				@Override
 				public void mouseExited(java.awt.event.MouseEvent e) {
 					FX_SELECTED=-1;
 					refresh_FX_TEXT(cv);
@@ -524,7 +529,7 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		int wave_value = (int) (cv.getValue());
 		
 		final ControlValue cv2 = pm.getPresetByName("OSC TYPE");
-		int osc_type_value = (int) ((float)cv2.getValue()/1.0f);
+		int osc_type_value = (int) (cv2.getValue()/1.0f);
 		//System.err.println("OSC VALUE == "+osc_type_value);
 		if ((osc_type_value>=0x00) && (osc_type_value<=0x07)) osc_type_value=0;
 		if ((osc_type_value>=0x08) && (osc_type_value<=0x0F)) osc_type_value=1;
@@ -570,6 +575,7 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 	}
 
 
+	@Override
 	public void refreshComponents()
 	{
 		super.refreshComponents();
@@ -581,13 +587,13 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		refreshLedMODTYPE();
 		
 		if (jToggleButton_FX_SEND.isSelected()==true)
-			jToggleButton_FX_SEND.setIcon(new ImageIcon("images/boutons/BT_FX_SEND_RED.png"));
+			jToggleButton_FX_SEND.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND_RED.png")));
 		else
-			jToggleButton_FX_SEND.setIcon(new ImageIcon("images/boutons/BT_FX_SEND.png"));
+			jToggleButton_FX_SEND.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND.png")));
 		if (jToggleButton_BPM_SYNC.isSelected()==true)
-			jToggleButton_BPM_SYNC.setIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC_RED.png"));
+			jToggleButton_BPM_SYNC.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC_RED.png")));
 		else
-			jToggleButton_BPM_SYNC.setIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC.png"));
+			jToggleButton_BPM_SYNC.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC.png")));
 	
 		
 	}
@@ -607,8 +613,8 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			if (value>63) 
 				jToggleButton_FX_SEND.setSelected(true);
 			
-			jToggleButton_FX_SEND.setPressedIcon(new ImageIcon("images/boutons/BT_FX_SEND_RED.png"));
-			jToggleButton_FX_SEND.setIcon(new ImageIcon("images/boutons/BT_FX_SEND.png"));
+			jToggleButton_FX_SEND.setPressedIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND_RED.png")));
+			jToggleButton_FX_SEND.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND.png")));
 			jToggleButton_FX_SEND.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					
@@ -625,16 +631,16 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 					pm.applyPresets(cv); 
 					
 					if (jToggleButton_FX_SEND.isSelected()==true)
-						jToggleButton_FX_SEND.setIcon(new ImageIcon("images/boutons/BT_FX_SEND_RED.png"));
+						jToggleButton_FX_SEND.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND_RED.png")));
 					else
-						jToggleButton_FX_SEND.setIcon(new ImageIcon("images/boutons/BT_FX_SEND.png"));
+						jToggleButton_FX_SEND.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND.png")));
 					
 				}
 			});
 			if (jToggleButton_FX_SEND.isSelected()==true)
-				jToggleButton_FX_SEND.setIcon(new ImageIcon("images/boutons/BT_FX_SEND_RED.png"));
+				jToggleButton_FX_SEND.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND_RED.png")));
 			else
-				jToggleButton_FX_SEND.setIcon(new ImageIcon("images/boutons/BT_FX_SEND.png"));
+				jToggleButton_FX_SEND.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND.png")));
 			
 		}
 		return jToggleButton_FX_SEND;
@@ -654,8 +660,8 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			if (value>63) 
 				jToggleButton_BPM_SYNC.setSelected(true);
 			
-			jToggleButton_BPM_SYNC.setPressedIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC_RED.png"));
-			jToggleButton_BPM_SYNC.setIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC.png"));
+			jToggleButton_BPM_SYNC.setPressedIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC_RED.png")));
+			jToggleButton_BPM_SYNC.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC.png")));
 			jToggleButton_BPM_SYNC.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					
@@ -672,16 +678,16 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 					pm.applyPresets(cv); 
 					
 					if (jToggleButton_BPM_SYNC.isSelected()==true)
-						jToggleButton_BPM_SYNC.setIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC_RED.png"));
+						jToggleButton_BPM_SYNC.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC_RED.png")));
 					else
-						jToggleButton_BPM_SYNC.setIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC.png"));
+						jToggleButton_BPM_SYNC.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC.png")));
 					
 				}
 			});
 			if (jToggleButton_BPM_SYNC.isSelected()==true)
-				jToggleButton_BPM_SYNC.setIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC_RED.png"));
+				jToggleButton_BPM_SYNC.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC_RED.png")));
 			else
-				jToggleButton_BPM_SYNC.setIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC.png"));
+				jToggleButton_BPM_SYNC.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC.png")));
 			
 		}
 		return jToggleButton_BPM_SYNC;
@@ -697,8 +703,8 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			jCheckBox_FX1 = new JRadioButton();
 			jCheckBox_FX1.setBounds(new Rectangle(290+202, 174, 24, 24));
 			jCheckBox_FX1.setOpaque(false);
-			jCheckBox_FX1.setSelectedIcon(new ImageIcon("images/led/on.png"));
-			jCheckBox_FX1.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_FX1.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
+			jCheckBox_FX1.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_FX1.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("FX SELECT");
@@ -714,8 +720,8 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			jCheckBox_FX2 = new JRadioButton();
 			jCheckBox_FX2.setBounds(new Rectangle(290+202, 196, 24, 24));
 			jCheckBox_FX2.setOpaque(false);
-			jCheckBox_FX2.setSelectedIcon(new ImageIcon("images/led/on.png"));
-			jCheckBox_FX2.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_FX2.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
+			jCheckBox_FX2.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_FX2.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("FX SELECT");
@@ -731,8 +737,8 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			jCheckBox_FX3 = new JRadioButton();
 			jCheckBox_FX3.setBounds(new Rectangle(290+202, 219, 24, 24));
 			jCheckBox_FX3.setOpaque(false);
-			jCheckBox_FX3.setSelectedIcon(new ImageIcon("images/led/on.png"));
-			jCheckBox_FX3.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_FX3.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
+			jCheckBox_FX3.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_FX3.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("FX SELECT");
@@ -774,8 +780,8 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			jCheckBox_FX_CHAIN_2 = new JRadioButton();
 			jCheckBox_FX_CHAIN_2.setBounds(new Rectangle(269, 473, 24, 24));
 			jCheckBox_FX_CHAIN_2.setOpaque(false);
-			jCheckBox_FX_CHAIN_2.setSelectedIcon(new ImageIcon("images/led/on.png"));
-			jCheckBox_FX_CHAIN_2.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_FX_CHAIN_2.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
+			jCheckBox_FX_CHAIN_2.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_FX_CHAIN_2.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("FX CHAIN");
@@ -799,8 +805,8 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			jCheckBox_FX_CHAIN_3 = new JRadioButton();
 			jCheckBox_FX_CHAIN_3.setBounds(new Rectangle(269, 504, 24, 24));
 			jCheckBox_FX_CHAIN_3.setOpaque(false);
-			jCheckBox_FX_CHAIN_3.setSelectedIcon(new ImageIcon("images/led/on.png"));
-			jCheckBox_FX_CHAIN_3.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_FX_CHAIN_3.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
+			jCheckBox_FX_CHAIN_3.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_FX_CHAIN_3.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("FX CHAIN");
@@ -833,9 +839,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_TYPE_1 == null) {
 			jCheckBox_MOD_TYPE_1 = new JRadioButton();
 			jCheckBox_MOD_TYPE_1.setOpaque(false);
-			jCheckBox_MOD_TYPE_1.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_TYPE_1.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_TYPE_1.setBounds(new Rectangle(460+202,129, 24, 24));
-			jCheckBox_MOD_TYPE_1.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_TYPE_1.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_TYPE_1.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD TYPE");
@@ -850,9 +856,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_TYPE_2 == null) {
 			jCheckBox_MOD_TYPE_2 = new JRadioButton();
 			jCheckBox_MOD_TYPE_2.setOpaque(false);
-			jCheckBox_MOD_TYPE_2.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_TYPE_2.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_TYPE_2.setBounds(new Rectangle(460+202, 151, 24, 24));
-			jCheckBox_MOD_TYPE_2.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_TYPE_2.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_TYPE_2.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD TYPE");
@@ -867,9 +873,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_TYPE_3 == null) {
 			jCheckBox_MOD_TYPE_3 = new JRadioButton();
 			jCheckBox_MOD_TYPE_3.setOpaque(false);
-			jCheckBox_MOD_TYPE_3.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_TYPE_3.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_TYPE_3.setBounds(new Rectangle(460+202, 174, 24, 24));
-			jCheckBox_MOD_TYPE_3.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_TYPE_3.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_TYPE_3.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD TYPE");
@@ -884,9 +890,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_TYPE_4 == null) {
 			jCheckBox_MOD_TYPE_4 = new JRadioButton();
 			jCheckBox_MOD_TYPE_4.setOpaque(false);
-			jCheckBox_MOD_TYPE_4.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_TYPE_4.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_TYPE_4.setBounds(new Rectangle(460+202, 196, 24, 24));
-			jCheckBox_MOD_TYPE_4.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_TYPE_4.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_TYPE_4.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD TYPE");
@@ -901,9 +907,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_TYPE_5 == null) {
 			jCheckBox_MOD_TYPE_5 = new JRadioButton();
 			jCheckBox_MOD_TYPE_5.setOpaque(false);
-			jCheckBox_MOD_TYPE_5.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_TYPE_5.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_TYPE_5.setBounds(new Rectangle(460+202, 219, 24, 24));
-			jCheckBox_MOD_TYPE_5.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_TYPE_5.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_TYPE_5.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD TYPE");
@@ -919,9 +925,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_DEST_1 == null) {
 			jCheckBox_MOD_DEST_1 = new JRadioButton();
 			jCheckBox_MOD_DEST_1.setOpaque(false);
-			jCheckBox_MOD_DEST_1.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_DEST_1.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_DEST_1.setBounds(new Rectangle(543+202, 129, 24, 24));
-			jCheckBox_MOD_DEST_1.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_DEST_1.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_DEST_1.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD DEST");
@@ -936,9 +942,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_DEST_2 == null) {
 			jCheckBox_MOD_DEST_2 = new JRadioButton();
 			jCheckBox_MOD_DEST_2.setOpaque(false);
-			jCheckBox_MOD_DEST_2.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_DEST_2.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_DEST_2.setBounds(new Rectangle(543+202, 151, 24, 24));
-			jCheckBox_MOD_DEST_2.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_DEST_2.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_DEST_2.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD DEST");
@@ -953,9 +959,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_DEST_3 == null) {
 			jCheckBox_MOD_DEST_3 = new JRadioButton();
 			jCheckBox_MOD_DEST_3.setOpaque(false);
-			jCheckBox_MOD_DEST_3.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_DEST_3.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_DEST_3.setBounds(new Rectangle(543+202, 174, 24, 24));
-			jCheckBox_MOD_DEST_3.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_DEST_3.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_DEST_3.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD DEST");
@@ -970,9 +976,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_DEST_4 == null) {
 			jCheckBox_MOD_DEST_4 = new JRadioButton();
 			jCheckBox_MOD_DEST_4.setOpaque(false);
-			jCheckBox_MOD_DEST_4.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_DEST_4.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_DEST_4.setBounds(new Rectangle(544+202, 197, 24, 24));
-			jCheckBox_MOD_DEST_4.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_DEST_4.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_DEST_4.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD DEST");
@@ -988,9 +994,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_DEST_5 == null) {
 			jCheckBox_MOD_DEST_5 = new JRadioButton();
 			jCheckBox_MOD_DEST_5.setOpaque(false);
-			jCheckBox_MOD_DEST_5.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_DEST_5.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_DEST_5.setBounds(new Rectangle(544+202, 220, 24, 24));
-			jCheckBox_MOD_DEST_5.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_DEST_5.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_DEST_5.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD DEST");
@@ -1006,9 +1012,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_MOD_DEST_6 == null) {
 			jCheckBox_MOD_DEST_6 = new JRadioButton();
 			jCheckBox_MOD_DEST_6.setOpaque(false);
-			jCheckBox_MOD_DEST_6.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_MOD_DEST_6.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_MOD_DEST_6.setBounds(new Rectangle(543+202, 219+24, 24, 24));
-			jCheckBox_MOD_DEST_6.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_MOD_DEST_6.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_MOD_DEST_6.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("MOD DEST");
@@ -1025,9 +1031,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_FILTER_TYPE_1 == null) {
 			jCheckBox_FILTER_TYPE_1 = new JRadioButton();
 			jCheckBox_FILTER_TYPE_1.setOpaque(false);
-			jCheckBox_FILTER_TYPE_1.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_FILTER_TYPE_1.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_FILTER_TYPE_1.setBounds(new Rectangle(715,519, 24, 24));
-			jCheckBox_FILTER_TYPE_1.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_FILTER_TYPE_1.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_FILTER_TYPE_1.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("FILTER TYPE");
@@ -1043,9 +1049,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_FILTER_TYPE_2 == null) {
 			jCheckBox_FILTER_TYPE_2 = new JRadioButton();
 			jCheckBox_FILTER_TYPE_2.setOpaque(false);
-			jCheckBox_FILTER_TYPE_2.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_FILTER_TYPE_2.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_FILTER_TYPE_2.setBounds(new Rectangle(753,519, 24, 24));
-			jCheckBox_FILTER_TYPE_2.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_FILTER_TYPE_2.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_FILTER_TYPE_2.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("FILTER TYPE");
@@ -1061,9 +1067,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_FILTER_TYPE_3 == null) {
 			jCheckBox_FILTER_TYPE_3 = new JRadioButton();
 			jCheckBox_FILTER_TYPE_3.setOpaque(false);
-			jCheckBox_FILTER_TYPE_3.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_FILTER_TYPE_3.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_FILTER_TYPE_3.setBounds(new Rectangle(715,542, 24, 24));
-			jCheckBox_FILTER_TYPE_3.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_FILTER_TYPE_3.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_FILTER_TYPE_3.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("FILTER TYPE");
@@ -1078,9 +1084,9 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		if (jCheckBox_FILTER_TYPE_4 == null) {
 			jCheckBox_FILTER_TYPE_4 = new JRadioButton();
 			jCheckBox_FILTER_TYPE_4.setOpaque(false);
-			jCheckBox_FILTER_TYPE_4.setSelectedIcon(new ImageIcon("images/led/on.png"));
+			jCheckBox_FILTER_TYPE_4.setSelectedIcon(new ImageIcon(getClass().getResource("/images/led/on.png")));
 			jCheckBox_FILTER_TYPE_4.setBounds(new Rectangle(753,542, 24, 24));
-			jCheckBox_FILTER_TYPE_4.setIcon(new ImageIcon("images/led/off.png"));
+			jCheckBox_FILTER_TYPE_4.setIcon(new ImageIcon(getClass().getResource("/images/led/off.png")));
 			jCheckBox_FILTER_TYPE_4.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					final ControlValue cv = pm.getPresetByName("FILTER TYPE");
@@ -1356,6 +1362,7 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 		
 	}
 	
+	@Override
 	public void paintComponent(Graphics g) {
 	/*     Toolkit kit = Toolkit.getDefaultToolkit();
 	     Image icone = kit.getImage("images//EMX.png" );
@@ -1366,7 +1373,7 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 	{
 		final ControlValue cv = pm.getPresetByName("FX SELECT");
 		float value = cv.getValue();
-		int index = (int) (1*value/((float)MaxValue/3.0));
+		int index = (int) (1*value/(MaxValue/3.0));
 	//	System.err.println("index + "+index);
 		setLedFXSelect(index);
 				
@@ -1515,14 +1522,14 @@ public class EMXPanel extends EMXPanelBase implements MyEventListener {
 			
 			// Puant ca ;)
 			if (jToggleButton_FX_SEND.isSelected()==true)
-				jToggleButton_FX_SEND.setIcon(new ImageIcon("images/boutons/BT_FX_SEND_RED.png"));
+				jToggleButton_FX_SEND.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND_RED.png")));
 			else
-				jToggleButton_FX_SEND.setIcon(new ImageIcon("images/boutons/BT_FX_SEND.png"));
+				jToggleButton_FX_SEND.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_FX_SEND.png")));
 			
 			if (jToggleButton_BPM_SYNC.isSelected()==true)
-				jToggleButton_BPM_SYNC.setIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC_RED.png"));
+				jToggleButton_BPM_SYNC.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC_RED.png")));
 			else
-				jToggleButton_BPM_SYNC.setIcon(new ImageIcon("images/boutons/BT_MOD_BPM_SYNC.png"));
+				jToggleButton_BPM_SYNC.setIcon(new ImageIcon(getClass().getResource("/images/boutons/BT_MOD_BPM_SYNC.png")));
 		}
 	
 	}

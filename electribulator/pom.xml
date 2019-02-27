@@ -4,13 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.warnotte</groupId>
 	<artifactId>electribulator</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.3.0</version>
 
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>7</maven.compiler.source>
-		<maven.compiler.target>7</maven.compiler.target>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
 		<project.mainclass1>org.warnotte.elecribulator.GUI.MainFrame</project.mainclass1>
 	</properties>
 
@@ -39,34 +39,80 @@
 					</execution>
 				</executions>
 			</plugin>
-		</plugins>
-		</build>
 
-			<dependencies>
-				<dependency>
-					<groupId>org.warnotte</groupId>
-					<artifactId>waxaudiomiditools</artifactId>
-					<version>0.0.1-SNAPSHOT</version>
-				</dependency>
-				<dependency>
-					<groupId>com.thoughtworks.xstream</groupId>
-					<artifactId>xstream</artifactId>
-					<version>1.4.10</version>
-				</dependency>
-				<dependency>
-					<groupId>org.warnotte</groupId>
-					<artifactId>waxlibswingcomponentsMVN</artifactId>
-					<version>0.0.1-SNAPSHOT</version>
-				</dependency>
-				<dependency>
-					<groupId>org.warnotte</groupId>
-					<artifactId>waxLib2</artifactId>
-					<version>0.0.1-SNAPSHOT</version>
-				</dependency>
-				<dependency>
-					<groupId>org.warnotte</groupId>
-					<artifactId>OBJ2GUI</artifactId>
-					<version>0.0.1-SNAPSHOT</version>
-				</dependency>
-			</dependencies>
+
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<target>
+
+								<copy todir="${basedir}/target/config">
+									<fileset dir="config">
+										<include name="**/*" />
+									</fileset>
+								</copy>
+								
+								<copy todir="${basedir}/target/docs">
+									<fileset dir="docs">
+										<include name="**/*" />
+									</fileset>
+								</copy>
+
+								<copy todir="${basedir}/target/saves">
+									<fileset dir="saves">
+										<include name="**/*" />
+									</fileset>
+								</copy>
+								
+								<copy todir="${basedir}/target/">
+									<fileset dir="rootFolder">
+										<include name="**/*" />
+									</fileset>
+								</copy>
+
+
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.warnotte</groupId>
+			<artifactId>waxaudiomiditools</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.warnotte</groupId>
+			<artifactId>waxlibswingcomponentsMVN</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.warnotte</groupId>
+			<artifactId>waxLib2</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.warnotte</groupId>
+			<artifactId>OBJ2GUI</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+	</dependencies>
 </project>

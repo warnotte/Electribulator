@@ -25,7 +25,6 @@ import javax.swing.event.EventListenerList;
 import org.warnotte.elecribulator.CControlers.CCManager;
 import org.warnotte.elecribulator.CControlers.Thread_Modulateurs;
 import org.warnotte.elecribulator.DTOs.Projet;
-import org.warnotte.elecribulator.GUI.DialogDivers;
 import org.warnotte.elecribulator.Multi.Evt_Event.Refresh_MSG;
 import org.warnotte.elecribulator.PresetManager.PresetManager_Drum;
 import org.warnotte.elecribulator.PresetManager.PresetManager_Synth;
@@ -35,9 +34,9 @@ import org.warnotte.waxaudiomiditools.MidiConfig.ConfigMIDIINPUT;
 import org.warnotte.waxaudiomiditools.MidiConfig.ConfigMIDIOUTPUT;
 import org.warnotte.waxlib2.Updater.Updater;
 import org.warnotte.waxlib2.Updater.Version;
+import org.warnotte.waxlibswingcomponents.Dialog.DialogDivers;
 
 import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class evt extends Thread implements	Receiver 
 {
@@ -68,19 +67,19 @@ public class evt extends Thread implements	Receiver
 	KnowMidiList kml_drum = new KnowMidiList();
 	//PresetManager_Drum pm_synth;
 	
-	boolean NoteDispatchingOrDirectResentWithVCA = true; // Pour monophonisé l'affaire.
+	boolean NoteDispatchingOrDirectResentWithVCA = true; // Pour monophonisÃ© l'affaire.
 
 	
 
 	private int USEDGEN;
-	private boolean method2=true; // Si false alors y'aun leger bug en fait.
+	private final boolean method2=true; // Si false alors y'aun leger bug en fait.
 	
 	Properties prop = new Properties();
 	private boolean Finished;
 	private boolean ArpegiatorEnabled=false;
 	private int RecordingInputToArpegiator=-1;
 	private int RecordingInputToArpegiatorIndex;
-	private EventListenerList xxxXListeners= new EventListenerList();
+	private final EventListenerList xxxXListeners= new EventListenerList();
 	private File loaded_modulateur;
 	private File loaded_presets;
 	private File loaded_projet;
@@ -109,7 +108,7 @@ public class evt extends Thread implements	Receiver
 	
 		//checkandGetForNewVersion();
 		
-		stack = new ArrayList<MidiMessage>(); // Touches entrées par le MIDI IN. (ou le clavier emulé).
+		stack = new ArrayList<MidiMessage>(); // Touches entrÃ©es par le MIDI IN. (ou le clavier emulÃ©).
 		stack = Collections.synchronizedList(stack);
 		_Transmitter=ConfigMIDIINPUT.createWindow(_Transmitter);
 		_Transmitter.setReceiver(this);
@@ -218,6 +217,7 @@ public class evt extends Thread implements	Receiver
 
 	
 	
+	@Override
 	public void run()
 	{
 		Finished=false;
@@ -303,9 +303,9 @@ public class evt extends Thread implements	Receiver
 			else
 				if (sm.getCommand()==ShortMessage.NOTE_ON)
 				{
-					int note = (Integer)sm.getData1();
+					int note = sm.getData1();
 				int idx = usedNotes.size();
-				// IDX Nombre totale des generateur utilisés 
+				// IDX Nombre totale des generateur utilisÃ©s 
 				if (idx<=4)
 				{
 					if (NoteDispatchingOrDirectResentWithVCA==true)
@@ -458,9 +458,9 @@ public class evt extends Thread implements	Receiver
 			else
 			if (sm.getCommand()==ShortMessage.NOTE_ON)
 			{
-				int note = (Integer)sm.getData1();
+				int note = sm.getData1();
 				int idx = usedNotes.size();
-				// IDX Nombre totale des generateur utilisés 
+				// IDX Nombre totale des generateur utilisÃ©s 
 				if (idx<=4)
 				{
 					if (method2==true)
@@ -574,7 +574,7 @@ public class evt extends Thread implements	Receiver
 
 	
 	/**
-	 * Recois un message par l'entrée (le clavier en thoerie).
+	 * Recois un message par l'entrÃ©e (le clavier en thoerie).
 	 */
 	public void send(MidiMessage message, long timeStamp) {
 		
@@ -641,7 +641,7 @@ public class evt extends Thread implements	Receiver
 	long previousstartNoteRec = 0;
 	private void recordToArpegiatorsCorrect(ShortMessage sm) {
 		
-		// TODO : Gerer le note OFF aussi pour avoir les durée et la durée du gate.
+		// TODO : Gerer le note OFF aussi pour avoir les durÃ©e et la durÃ©e du gate.
 		Thread_Arpegiateur arp = thr_arpegiateurs.get(RecordingInputToArpegiator);
 		
 		if ((sm.getCommand()==ShortMessage.NOTE_ON) && (sm.getData2()!=0) && (getRecordingInputToArpegiatorIndex()<arp.getNoteSeqLength()))
@@ -656,7 +656,7 @@ public class evt extends Thread implements	Receiver
 			if (getRecordingInputToArpegiatorIndex()>0)
 			{
 				long sleeplen = startNoteRec-previousstartNoteRec;
-				float ratio = -(float)(previousstartNoteRec-stopNoteRec)/(float)sleeplen;
+				float ratio = -(float)(previousstartNoteRec-stopNoteRec)/sleeplen;
 				System.err.println("SleepLen = "+sleeplen);
 				System.err.println("Ratio    = "+ratio);
 				arp.SleepLen[getRecordingInputToArpegiatorIndex()-1]=sleeplen;
@@ -705,7 +705,7 @@ public class evt extends Thread implements	Receiver
 	private void recordToArpegiatorsSimple(ShortMessage sm) {
 		if ((sm.getCommand()==ShortMessage.NOTE_ON) && (sm.getData2()!=0))
 		{
-			// TODO : Gerer le note OFF aussi pour avoir les durée et la durée du gate.
+			// TODO : Gerer le note OFF aussi pour avoir les durÃ©e et la durÃ©e du gate.
 			Thread_Arpegiateur arp = thr_arpegiateurs.get(RecordingInputToArpegiator);
 			
 			// Si on a pas rempli tout les case on arrete pas.
@@ -744,7 +744,7 @@ public class evt extends Thread implements	Receiver
 			if (PolyGameEnable[i] == true) {
 				ShortMessage newmessage = new ShortMessage();
 				try {
-					((ShortMessage) newmessage).setMessage(sm.getCommand(), sm.getChannel(), sm.getData1()+ PolyGameNoteValue[i], sm.getData2());
+					newmessage.setMessage(sm.getCommand(), sm.getChannel(), sm.getData1()+ PolyGameNoteValue[i], sm.getData2());
 					addMessageToStack(newmessage);
 					//stack.add(newmessage);
 				} catch (InvalidMidiDataException e) {
@@ -778,7 +778,7 @@ public class evt extends Thread implements	Receiver
 					else
 					{
 						ShortMessage newmessage = new ShortMessage();
-						((ShortMessage) newmessage).setMessage(sm.getCommand(), sm.getChannel(), sm.getData1(), sm.getData2());
+						newmessage.setMessage(sm.getCommand(), sm.getChannel(), sm.getData1(), sm.getData2());
 						sendMessageToStack(newmessage);
 					}
 						
@@ -1227,7 +1227,7 @@ public PresetManager_Synth loadPresets(String file) throws IOException, ClassNot
 			for (int j = 0; j< 127; j++) {
 					ShortMessage newmessage = new ShortMessage();
 					try {
-						((ShortMessage) newmessage).setMessage(ShortMessage.NOTE_OFF,evt.getOutputChannels()[i], j, 0);
+						newmessage.setMessage(ShortMessage.NOTE_OFF,evt.getOutputChannels()[i], j, 0);
 					} catch (InvalidMidiDataException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

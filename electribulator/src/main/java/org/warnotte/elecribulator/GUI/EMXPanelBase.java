@@ -10,10 +10,10 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 
-import org.warnotte.Swing.Component.WaxSlider.WRoundSlider;
 import org.warnotte.elecribulator.PresetManager.ControlValue;
 import org.warnotte.elecribulator.PresetManager.PresetManager;
 import org.warnotte.waxaudiomiditools.CControlers.KnowMidiList;
+import org.warnotte.waxlibswingcomponents.Swing.Component.WaxSlider.WRoundSlider;
 
 public class EMXPanelBase extends JPanel {
 
@@ -38,6 +38,7 @@ public class EMXPanelBase extends JPanel {
 		repaint();
 	}
 	
+	@Override
 	public void paint(Graphics g)
 	{
 		if (drumpanel==false)
@@ -54,6 +55,7 @@ public class EMXPanelBase extends JPanel {
 	  /* */
 	}
 	
+	@Override
 	public void paintComponent(Graphics g) {
 		if (drumpanel==false)
 		{
@@ -135,7 +137,7 @@ public class EMXPanelBase extends JPanel {
 				if ((c!=null) && (c.getName()!=null))
 				{
 				if (c.getName().equalsIgnoreCase(name))
-					return (JToggleButton)c;
+					return c;
 				}
 				else
 				{
@@ -155,7 +157,7 @@ public class EMXPanelBase extends JPanel {
 			{
 				WRoundSlider c = (WRoundSlider) getComponent(i);
 				if (c.getName().equalsIgnoreCase(name))
-					return (WRoundSlider)c;
+					return c;
 			}
 		}
 		

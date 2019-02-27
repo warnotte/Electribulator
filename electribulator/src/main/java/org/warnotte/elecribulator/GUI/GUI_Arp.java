@@ -1,45 +1,41 @@
 package org.warnotte.elecribulator.GUI;
 
-import java.awt.GridBagLayout;
-
-import javax.sound.midi.InvalidMidiDataException;
-import javax.sound.midi.MidiMessage;
-import javax.sound.midi.ShortMessage;
-import javax.swing.JPanel;
-import javax.swing.JSlider;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSlider;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
-
-import java.awt.Dimension;
-import javax.swing.BorderFactory;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.TableColumn;
 
 import org.warnotte.elecribulator.GUI.TableModel.ArpMultiTableModel;
 import org.warnotte.elecribulator.GUI.TableModel.ArpNotesTableModel;
 import org.warnotte.elecribulator.Multi.Thread_Arpegiateur;
-import org.warnotte.elecribulator.Multi.evt;
 import org.warnotte.elecribulator.Multi.Thread_Arpegiateur.Mode;
-
-import java.awt.Font;
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JCheckBox;
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
-import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.IOException;
+import org.warnotte.elecribulator.Multi.evt;
+import org.warnotte.waxlibswingcomponents.Dialog.DialogDivers;
 
 public class GUI_Arp extends JPanel implements ActionListener {
 	
@@ -68,7 +64,7 @@ public class GUI_Arp extends JPanel implements ActionListener {
 	private JButton jButton_COPY_GATE_LENGTH = null;
 	private JButton jButton_LEARN = null;
 	private boolean learning;
-	private int idarpegiateur;
+	private final int idarpegiateur;
 	private JPanel jPanel_TOP = null;
 	private JButton jButton_LOAD = null;
 	private JButton jButton_SAVE = null;
@@ -467,7 +463,7 @@ public class GUI_Arp extends JPanel implements ActionListener {
 			jButton_COPY_GATE_LENGTH.setToolTipText("Copy gate len to all column");
 			jButton_COPY_GATE_LENGTH.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					float gateLen = (float)jSlider_GateTime.getValue()/100.0f;
+					float gateLen = jSlider_GateTime.getValue()/100.0f;
 					Copy_GateLength(gateLen);
 				}
 			});
@@ -612,26 +608,33 @@ public class GUI_Arp extends JPanel implements ActionListener {
 	}
 	protected void load() 
 	{
+		try
+		{
 		File f = DialogDivers.LoadDialog(new JFrame(), "xml", "saves"+File.separator+"arp"+File.separator);
 		if (f!=null)
 		{
-			try
-			{
+			
 				ta.load(f.getAbsolutePath());
 				model_notes.fireTableStructureChanged();
-			} 
-			catch (IOException e)
-			{
-				e.printStackTrace();
-				DialogDivers.Show_dialog(e, "Error loading arp");
-				e.printStackTrace();
-			}
-			catch (ClassNotFoundException e)
-			{
-				e.printStackTrace();
-				DialogDivers.Show_dialog(e, "Error loading arp");
-				
-			}
+			
+		}
+		} 
+		catch (IOException e)
+		{
+			e.printStackTrace();
+			DialogDivers.Show_dialog(e, "Error loading arp");
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e)
+		{
+			e.printStackTrace();
+			DialogDivers.Show_dialog(e, "Error loading arp");
+			
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+			DialogDivers.Show_dialog(e, "Error loading arp");
+			
 		}
 	}
 

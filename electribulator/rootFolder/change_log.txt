@@ -1,0 +1,198 @@
+ChangeLogs
+==========
+
+TODO :
+
+- Le controle du volume et du filtre si module provoque des stress quand on y touche (et pire pour le volume qui n'est meme plus pris en compte).
+  --> Si un des modulateurs est mis sur un canal midi precis, alors disabled le component associé dans l'interface d'edition emx.
+  
+- Mettre le Keyboard emulator dans ce programme ci aussi. (si j'arrive a forcer l'intercepetion de touche).
+- Rajout d'un editeur de FX ailleurs que la ou il est dans l'interface. (le decouple).
+
+0.3.0
+
+- Mavenified 
+
+0.2.4
+
+- Added spline interpolation for modulators
+
+0.2.3
+
+- Added Roll button for drum presets.
+- Added Amp EG button for drum presets.
+- Added eg time know for drum presets.
+
+0.2.2 :
+
+- Escape pour annuler l'enregistrement des notes de l'arpegiateur.
+- Upgrade des separateur de path pour les mac user.
+- Big fix dans le systeme de comptage du temps qui faisait deconner le son (les modulateurs �tait trop rapide ou je ne sais quoi).
+- Correction dans le VCA_2ND qui entre l'ATTACK et le SUSTAIN mettait la valeur a 0 (ce qui n'est pas logique et qui faisait un petit saut dans le volume).
+
+0.2.1 :
+
+- Mettre le tonematrix dans le programme. (launch WToneLike1.jar)
+- ARPegiator can now record SleepLen and gatelen when il Learn mode. use the RecordMode checkBox
+- Play and stop button to remote control the EMX (by sending a START/STOP command).
+
+
+0.2.0 :
+
+- Ajout d'une checkbox pour forcer l'envoye d'un NOTE_OFF quand necessaire. (pour utiliser un autre synth� que l'electribe par exemple).
+- Ajout d'une checkbox pour bypass Modulators pour desactiver l'envoie des messages midi et donc disabler les modulateurs.
+- Ajout d'un niveau supplementaire dans l'arpegiateur pour augmenter les possibit�s de sequencement de notes.
+
+0.1.8 :
+
+- Am�lioration de l'editeur de VCA (bigger GUI aivalable).
+- Correction mineurs dans l'interface.
+- Correction d'un gros leak memoire quand on rechargeait un autre preset (dut a l'interface).
+- Simple Presets system for DRUM.
+- Moyen pour rendre le truc "monophonic ou je sais quoi" (donc recevoir sur != canaux et renvoyer sur les != cannaux en modifiant le dispatcher et le midi listener).
+- Stopper un arpegiateur qui jouait si on clique sur LEARN.
+- Way to disable automatic note dispatching. (A new checkbox). If option is not selected, the programm will resent notes on 5 channel and resent on the 5 channel. (To have a monopohonic beahviour, but with VCA and VCO). Requested by one user i can't remember the name.
+- Afficher l'endroit ou se trouve la note jou�e par l'arpegiateur.
+- Load/Save arpegiateurs.
+- Rajout de quelques presets "d'usine".
+
+0.1.1 :
+
+- Correction dans le VCA. Le vca maintenant peut avoir un sustain de 0 et l'attack un sustain de 0 qui donnera un attack maximale d�s l'appuye d'une note.
+- Moyen pour configurer les canaux midi r�element (et pas de 1 a 5).
+- Resent le preset quand tu load les modulateurs.
+- Save/load projet (2 fichier comme boatslicer).
+- List des projets facilement accesible a droite, chargement quand clique dans la liste ou touche haut bas.
+
+0.1.0 :
+
+- Trouver pourquoi les Macosx n'aimes pas dutout mon programme --> Semble etre juste un probleme de MIDI.
+- Modifier le systeme de generation de modulations pour avoir un truc plus puissant. 
+
+ 
+0.0.9 : 
+
+FR/
+- Rajouter un fichier xml de preset ainsi qu'un menu dans les VCA pour mettre rapidement des enveloppes. (right click to show menu).
+- Rajouter une combobox a la place du textfield avec le chiffre pour la forme d'ondes des LFO (vco).
+
+- Rajouter un muliplicateur de note (1 note tapp� = X not�e reelement envoy� --> polynotes)
+- Rajouter un system d'arpegiateur pour creer des mini sequence.
+- Settings complet des Arpegiateur. (avec truc normal et/ou Sequenceur?! qui se param avec destuc normaux).
+- Gui de l'arpegiateur * 5.
+
+
+EN/
+
+
+
+0.0.8 : 
+
+FR/
+- Envoi de volume 0 sur chaque canal lors d'un load_preset.
+- Rajouter un bouton pour avoir une liste pour choisir la destination des modulateurs plus facilement.
+- Trouver et corriger le bug qui fait que ca ne fonctionne pas bien avec un sequenceur style cubase.
+- Verifier avec un sequenceur et corrections. (R�ecriture du note dispatcher).
+- Mettre le BPM Sync qui apparement marche en fait. (pour le modulateur de l'electribe)
+- Rajouter un systeme pour les fonds. (2 fond disponible)
+- Test sour linux que le programme se lance (impossible de tester s'il fonctionne avec le midi :| mais il se lance :).
+- Creation d'un nouveau VCA offrant beaucoup plus de possibilit� que le simple VCA actuel.
+  (Touche Delete / Insert pour supprimer rajouter des points au graphe).
+- Yatmandu says : "One question: I noticed the reverb was bypassed as an effect when you look at the effects dials!? It goes from BPM Sync Delay to HPF, jumping over reverb. Is this a kind of message about EMX's poor reverb? lol. or a bug? or just a display bug?" 
+  --> identinfy and correct if need.
+  --> Add a system to see wich effect is lastely choosen. (when mouse is on a wheel).
+- Charger 2 nouvelles demos a laplace de celle qui vont plus et virer les anciens presets quand le VCA sera fini.
+- Augmente le refresh rate des modulateurs
+
+  
+EN/
+
+- Send Volume 0 on each channel when preset_load.
+- Add a button to select CC of each modulator inside a human readable list.
+- Find and corrects bugs due to note dispatcher when using a software sequenceur (rewritting note dispatcher)
+- Add the BPM Sync that seem to work in fact.
+- Adding a way to change background while program is running. Adding 2 background from FSK1138(thanks to him).
+- Test under linux for working, autoupdate (but not midi test :()
+- Creation of a new VCA allowing really complex signal shape. (Delete and insert to remove/add point to the graph).
+- Yatmandu says : "One question: I noticed the reverb was bypassed as an effect when you look at the effects dials!? It goes from BPM Sync Delay to HPF, jumping over reverb. Is this a kind of message about EMX's poor reverb? lol. or a bug? or just a display bug?" 
+  --> identinfy and correct if need.
+  --> Add a system to see wich effect is lastely choosen. (when mouse is on a wheel).
+
+
+
+0.0.7 : 
+
+FR/
+- Remplir la liste de 76 PCM.
+- Lors du double click sur les Roulettes, et qu'on confirme le chiffre avec enter, le preset est bien envoy�
+- Les modulateurs doivent prendre la valeur dans le PresetManager et la moduler.
+- Correction du broken download dans l'update (je prie cette fois ci).
+- R�agir au clavier de l'electribe pour sync et gate sur les modulateurs sur le PC. (leger bug vca). Permet
+  d'utiliser le clavier de l'electribe (coupl� au point suivant) pour parametrer l'electribe et le programme (sur le canal 1 uniquement)
+  Attention, ce ne fonctionne qu'en monophonique sur une seul voix.
+- Reagir au deplacement des rouletes de l'electribe, si on vx utiliser l'electribe pour parametre les roulettes dans le programme.
+  Le programme recoit les event, change les roulette comme il faut et garde les valeurs dans le presetmanager.
+- Ajout d'un scrollPane pour le panel des presets.
+- Reecriture du VCA car il n'etait pas extrement terrible.
+- VCO, plusieurs types d'ondes rajout�es.
+
+
+EN/
+
+- Fill the 76 PCM list.
+- Bugfix on slider (when double click to enter the values).
+- Modulators now take value in preset manager instead of 1.0f;
+- Correction broken download (updater).
+- React to electribe event (keyboard or controlchange) should be take in account by the program.
+  U can now use electribe as keyboard (but in monophonic) to preset easily on the hardware instead of mouse.
+- Add a scrollPane to the emxpanel.
+- Rewrite all the VCA.
+- More wavetype in VCOs. 
+
+  
+0.0.6 :
+
+- Creation du EMXPanel qui ressemble a l'emx et qui la controle comme si on y etait.
+- Suppresion de l'ancien systeme de parametrages.
+- Ajout du double clique sur roulette pour selectionner la valeur dans une textbox.
+- Ajouter la roulette speciale (celle pres de lecran LCD) pour changer les type d'ondes.
+- Position des roulettes et choix des angles.
+- Affichage "LCD" du type d'oscillateur et du Wave en cours.
+- Charger le PianoPCM par defaut.
+
+0.0.5 :
+
+- Coupe l'envoye des modulateurs durant la phase d'envoye du preset.
+- Envoyer le preset quand on change un valeur dans le tableau du preset.
+- Bouton pour copier le premier modulateurs vers les 4 autres.
+- Implementer les NPRN pour pouvoir envoyer le preset WAVE (et autres) et le rajoute dans la liste des presets.
+- Correction du systeme de mis a jour qui deconnait apperment (bcp de detection de version).
+
+0.0.4 :
+
+- Ajout d'un systeme qui permet de voir/telecharg� une nouvelle version sur le net.
+- Pb du look and feel qui doit marche que sous windows.
+
+0.0.3 : 
+
+- Grosse correction dans le system de repartition des notes pour la polyphonie.
+- Faire un autre petit programme qui va permettre regler l'electribe (type de synthese, d'effets, ainsi que les valeurs de parametres).
+afin de creer le son sur le pc et que l'electribe configure les 5 cannaux seul.
+- Modification du gui pour accueilir le nouveau systeme de presets generaux de l'electribe (pour parametre les sons des 5 synth�).
+- Chargement/sauvegarde des presets generaux (le son du synth� finale) et des preset des modulateurs (ajoute l'eneveloppe et modules != CC)
+- Ajout d'un splash screen.
+
+Beta : 
+
+- 1 channel config par channel_manager me semble opportun.
+- Save/Load XML des presets des modulateurs.
+- Faire qlq presets.
+- Correction bugs mineurs.
+- Methode d'attribution des notes (De 1 a 5 en prenant tjrs les premieres, ou alors on prends la suivante)
+La methode actuelle utilise les X premiers synth disponible, remplissant tjrs de 1 a X sans laisser de trou.
+La nouvelle methode devrait utiliser a chaque fois le synth part +1 du dernier utilis� (sinon on entendra jamais le release des enveloppes).
+- Le release du VCA marche maintenant (modification dans l'envoi du noteoff juste avant le noteon au lieu du veritable noteoff recu).
+
+Alpha :
+
+... 

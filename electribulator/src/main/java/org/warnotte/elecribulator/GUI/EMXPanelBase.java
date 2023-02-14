@@ -13,7 +13,8 @@ import javax.swing.JToggleButton;
 import org.warnotte.elecribulator.PresetManager.ControlValue;
 import org.warnotte.elecribulator.PresetManager.PresetManager;
 import org.warnotte.waxaudiomiditools.CControlers.KnowMidiList;
-import org.warnotte.waxlibswingcomponents.Swing.Component.WaxSlider.WRoundSlider;
+
+import io.github.warnotte.waxlib3.waxlibswingcomponents.Swing.Component.WaxSlider.WRoundSlider;
 
 public class EMXPanelBase extends JPanel {
 

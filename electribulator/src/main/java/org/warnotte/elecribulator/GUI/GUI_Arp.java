@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -35,7 +34,8 @@ import org.warnotte.elecribulator.GUI.TableModel.ArpNotesTableModel;
 import org.warnotte.elecribulator.Multi.Thread_Arpegiateur;
 import org.warnotte.elecribulator.Multi.Thread_Arpegiateur.Mode;
 import org.warnotte.elecribulator.Multi.evt;
-import org.warnotte.waxlibswingcomponents.Dialog.DialogDivers;
+
+import io.github.warnotte.waxlib3.waxlibswingcomponents.Dialog.DialogDivers;
 
 public class GUI_Arp extends JPanel implements ActionListener {
 	

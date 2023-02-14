@@ -37,19 +37,20 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 import org.jdesktop.swingx.JXTaskPane;
 import org.jdesktop.swingx.JXTaskPaneContainer;
-import org.warnotte.OBJ2GUI.JWPanel;
-import org.warnotte.OBJ2GUI.ParseurAnnotations;
-import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
-import org.warnotte.OBJ2GUI.Events.MyEventListener;
 import org.warnotte.elecribulator.CControlers.CCManager;
 import org.warnotte.elecribulator.CControlers.Thread_Modulateurs;
 import org.warnotte.elecribulator.Multi.evt;
 import org.warnotte.waxaudiomiditools.CControlers.SignGenBase;
 import org.warnotte.waxaudiomiditools.CControlers.SignGen_VCA_2ND;
 import org.warnotte.waxaudiomiditools.CControlers.GUI.Panel_VCA2ND;
-import org.warnotte.waxlib2.Updater.Version;
-import org.warnotte.waxlibswingcomponents.Dialog.DialogDivers;
-import org.warnotte.waxlibswingcomponents.SplashScreen.LoadSplash2;
+
+import io.github.warnotte.waxlib3.OBJ2GUI.JWPanel;
+import io.github.warnotte.waxlib3.OBJ2GUI.ParseurAnnotations;
+import io.github.warnotte.waxlib3.OBJ2GUI.Events.MyChangedEvent;
+import io.github.warnotte.waxlib3.OBJ2GUI.Events.MyEventListener;
+import io.github.warnotte.waxlib3.core.Updater.Version;
+import io.github.warnotte.waxlib3.waxlibswingcomponents.Dialog.DialogDivers;
+import io.github.warnotte.waxlib3.waxlibswingcomponents.SplashScreen.LoadSplash2;
 
 public class MainFrame extends JFrame implements WindowListener
 {
@@ -1185,7 +1186,7 @@ public class MainFrame extends JFrame implements WindowListener
 				
 				
 				
-				Version.set(0,3,0,"Mavenized");
+				Version.set(0,4,0,"Mavenized");
 				ls=new LoadSplash2(getClass().getResource("/images/splash.jpg"), Version.getVersionString(), "Warnotte Renaud");
 				ls.setVisible(true);
 				

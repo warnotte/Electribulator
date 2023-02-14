@@ -146,29 +146,15 @@
 
 	<dependencies>
 		<dependency>
+		    <groupId>io.github.warnotte</groupId>
+		    <artifactId>waxlib3</artifactId>
+		    <version>0.0.1.5</version>
+		</dependency>
+		<dependency>
 			<groupId>org.warnotte</groupId>
 			<artifactId>waxaudiomiditools</artifactId>
-			<version>0.1.0</version>
+			<version>0.2.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.thoughtworks.xstream</groupId>
-			<artifactId>xstream</artifactId>
-			<version>1.4.10</version>
-		</dependency>
-		<dependency>
-			<groupId>org.warnotte</groupId>
-			<artifactId>waxlibswingcomponentsMVN</artifactId>
-			<version>0.1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.warnotte</groupId>
-			<artifactId>waxLib2</artifactId>
-			<version>0.1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.warnotte</groupId>
-			<artifactId>OBJ2GUI</artifactId>
-			<version>0.1.0</version>
-		</dependency>
+		
 	</dependencies>
 </project>

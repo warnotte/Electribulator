@@ -15,12 +15,13 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JToggleButton;
 
-import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
-import org.warnotte.OBJ2GUI.Events.MyEventListener;
 import org.warnotte.elecribulator.Definitions.DrumTypeList;
 import org.warnotte.elecribulator.PresetManager.ControlValue;
 import org.warnotte.elecribulator.PresetManager.PresetManager_Drum;
-import org.warnotte.waxlibswingcomponents.Swing.Component.WaxSlider.WRoundSlider;
+
+import io.github.warnotte.waxlib3.OBJ2GUI.Events.MyChangedEvent;
+import io.github.warnotte.waxlib3.OBJ2GUI.Events.MyEventListener;
+import io.github.warnotte.waxlib3.waxlibswingcomponents.Swing.Component.WaxSlider.WRoundSlider;
 
 public class EMXPanel_DRUM extends EMXPanelBase implements MyEventListener {
 

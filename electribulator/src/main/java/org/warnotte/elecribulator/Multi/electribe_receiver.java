@@ -1,22 +1,23 @@
 package org.warnotte.elecribulator.Multi;
 
 import javax.sound.midi.MidiDevice;
+import javax.sound.midi.MidiDevice.Info;
 import javax.sound.midi.MidiMessage;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Receiver;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Transmitter;
-import javax.sound.midi.MidiDevice.Info;
 import javax.swing.JFrame;
 import javax.swing.event.EventListenerList;
 
-import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
-import org.warnotte.OBJ2GUI.Events.MyEventListener;
 import org.warnotte.elecribulator.PresetManager.ControlValue;
 import org.warnotte.waxaudiomiditools.MidiConfig.ConfigMIDIINPUT;
 import org.warnotte.waxaudiomiditools.MidiConfig.MidiCommon;
 import org.warnotte.waxaudiomiditools.MidiConfig.retourMidiConfig;
+
+import io.github.warnotte.waxlib3.OBJ2GUI.Events.MyChangedEvent;
+import io.github.warnotte.waxlib3.OBJ2GUI.Events.MyEventListener;
 
 public class electribe_receiver implements Receiver
 {

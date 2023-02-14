@@ -11,11 +11,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 
-import org.warnotte.OBJ2GUI.Events.MyChangedEvent;
-import org.warnotte.OBJ2GUI.Events.MyEventListener;
 import org.warnotte.elecribulator.PresetManager.PresetManager;
 import org.warnotte.elecribulator.PresetManager.PresetManager_Drum;
 import org.warnotte.elecribulator.PresetManager.PresetManager_Synth;
+
+import io.github.warnotte.waxlib3.OBJ2GUI.Events.MyChangedEvent;
+import io.github.warnotte.waxlib3.OBJ2GUI.Events.MyEventListener;
 
 public class GUI_PRESETMANAGER extends JPanel implements MyEventListener {
 	

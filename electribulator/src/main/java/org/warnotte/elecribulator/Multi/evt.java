@@ -32,11 +32,12 @@ import org.warnotte.elecribulator.Utils.Utils;
 import org.warnotte.waxaudiomiditools.CControlers.KnowMidiList;
 import org.warnotte.waxaudiomiditools.MidiConfig.ConfigMIDIINPUT;
 import org.warnotte.waxaudiomiditools.MidiConfig.ConfigMIDIOUTPUT;
-import org.warnotte.waxlib2.Updater.Updater;
-import org.warnotte.waxlib2.Updater.Version;
-import org.warnotte.waxlibswingcomponents.Dialog.DialogDivers;
 
 import com.thoughtworks.xstream.XStream;
+
+import io.github.warnotte.waxlib3.core.Updater.Updater;
+import io.github.warnotte.waxlib3.core.Updater.Version;
+import io.github.warnotte.waxlib3.waxlibswingcomponents.Dialog.DialogDivers;
 
 public class evt extends Thread implements	Receiver 
 {

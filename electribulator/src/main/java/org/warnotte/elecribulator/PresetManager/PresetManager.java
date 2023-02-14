@@ -63,7 +63,7 @@ public class PresetManager {
 	public synchronized void load(String file) throws IOException, ClassNotFoundException, InterruptedException
 	{  
 		FileInputStream fis = new FileInputStream(new File(file));
-	    XStream xstream = Utils.getXStreamInstance();
+		XStream xstream = Utils.getXStreamInstance();
 	    ObjectInputStream out = xstream.createObjectInputStream(fis);
 	    synchronized(controleurs_synth)
 	    {
